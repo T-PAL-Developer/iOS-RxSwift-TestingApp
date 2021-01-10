@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,16 +58,28 @@
                                     <constraint firstAttribute="height" constant="250" id="U40-GD-Cib"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URJ-Gc-13V">
+                                <rect key="frame" x="30" y="504" width="354" height="43"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="+ ADD NAME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="URJ-Gc-13V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="EKX-zb-b8s"/>
+                            <constraint firstItem="URJ-Gc-13V" firstAttribute="top" secondItem="7Xv-Hq-yzL" secondAttribute="bottom" constant="10" id="FJE-uB-yk7"/>
                             <constraint firstItem="7Xv-Hq-yzL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="FYI-Hd-06e"/>
                             <constraint firstItem="7Xv-Hq-yzL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jx3-er-D5F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="URJ-Gc-13V" secondAttribute="trailing" constant="30" id="V7r-36-DG6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Xv-Hq-yzL" secondAttribute="trailing" constant="20" id="ns3-x4-Ej9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addNameButton" destination="URJ-Gc-13V" id="iuh-P0-vfL"/>
                         <outlet property="helloLabel" destination="5hU-dD-B8M" id="GPB-zp-Ya7"/>
                         <outlet property="nameEntryTextField" destination="T45-bF-PwA" id="2VY-1S-G9f"/>
                         <outlet property="namesLabel" destination="tI1-lq-FJm" id="j6e-OQ-EHg"/>
@@ -77,5 +90,59 @@
             </objects>
             <point key="canvasLocation" x="13.043478260869566" y="71.651785714285708"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="D06-Cx-IGa">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="Lqd-4T-kCK" customClass="SecondViewController" customModule="RxSwiftSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oRK-Rt-Pqc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a01-VK-dLU">
+                                <rect key="frame" x="20" y="164" width="374" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HnZ-1F-cgr">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92w-td-Z4d">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="SUBMIT">
+                                            <color key="titleColor" red="0.0" green="0.68973846650000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="NYd-OS-hkI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EWG-Gy-tnr"/>
+                        <color key="backgroundColor" red="0.0" green="0.68973846650000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a01-VK-dLU" firstAttribute="leading" secondItem="oRK-Rt-Pqc" secondAttribute="leading" constant="20" id="Bcb-1N-UdL"/>
+                            <constraint firstItem="EWG-Gy-tnr" firstAttribute="trailing" secondItem="a01-VK-dLU" secondAttribute="trailing" constant="20" id="IsY-gq-0kQ"/>
+                            <constraint firstItem="a01-VK-dLU" firstAttribute="top" secondItem="EWG-Gy-tnr" secondAttribute="top" constant="120" id="Rjl-bq-eid"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newNameTextField" destination="HnZ-1F-cgr" id="JdA-US-NkY"/>
+                        <outlet property="submitButton" destination="92w-td-Z4d" id="MCc-ge-ypZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDr-L4-3KX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="82"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
